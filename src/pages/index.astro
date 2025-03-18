@@ -25,7 +25,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <main id="main-content" data-layout="index">
     <section id="hero" class="pt-8 pb-6">
       <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
+        萑澈的错题本
       </h1>
       <a
         target="_blank"
@@ -43,57 +43,16 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       </a>
 
       <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+        欢迎来到「萑澈错题本」的奇妙世界——这里没有“一学就会”的魔法，但有“错了再战”的快乐秘籍！🎮 无论你是被算法题绕成毛线团的懵圈选手，被408四门课连环暴击的头秃预备役，还是和竞赛题相爱相杀的倔强肝帝，这里都能把你的错题变成升级打怪的专属装备库！错题本会自动给题目贴上“这题阴险”“知识点离家出走”等灵魂标签，附赠段子手写的解题脑洞和学霸的摸鱼小抄。每天解锁一道盲盒题（可能是送分天使也可能是脑细胞刺客），在“错题考古墙”围观自己三个月前的迷惑代码笑出鹅叫，还能去评论区捕捉和你一样边挠头边干饭的战友。悄悄说，连续打卡会触发“诶这题我居然会了”的隐藏成就哦～快来把翻车现场变成勋章墙，毕竟，笑着刷题的人运气总不会太差！🚀
       </p>
-      <p class="mt-2">
-        Read the blog posts or check
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="https://github.com/satnaing/astro-paper#readme"
-        >
-          README
-        </LinkButton> for more info.
-      </p>
-      {
-        // only display if at least one social link is enabled
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
-            <div class="mr-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
     </section>
 
     <Hr />
 
     {
-      featuredPosts.length > 0 && (
-        <>
-          <section id="featured" class="pt-12 pb-6">
-            <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
-            <ul>
-              {featuredPosts.map(({ data, id }) => (
-                <Card
-                  href={`/posts/${id}/`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              ))}
-            </ul>
-          </section>
-          {recentPosts.length > 0 && <Hr />}
-        </>
-      )
-    }
-
-    {
       recentPosts.length > 0 && (
         <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
+          <h2 class="text-2xl font-semibold tracking-wide">文章</h2>
           <ul>
             {recentPosts.map(
               ({ data, id }, index) =>
@@ -112,7 +71,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
     <div class="my-8 text-center">
       <LinkButton href="/posts/">
-        All Posts
+        全部文章
         <IconArrowRight class="inline-block" />
       </LinkButton>
     </div>
