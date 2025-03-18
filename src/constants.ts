@@ -1,11 +1,12 @@
 import IconMail from "@/assets/icons/IconMail.svg";
 import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconBrandX from "@/assets/icons/IconBrandX.svg";
-import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
 import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
+import IconBrandQq from "@/assets/icons/IconBrandQq.svg";
+import IconBrandBilibili from "@/assets/icons/IconBrandBilibili.svg";
 import { SITE } from "@/config";
 
 export const LOCALE = {
@@ -24,13 +25,13 @@ export const SOCIALS = [
     name: "QQ",
     href: "https://qm.qq.com/cgi-bin/qm/qr?k=L_5nTaWr9hCupgFlntG9dJvVOYryFvv_&jump_from=webapi&authKey=dMK7Hy64j/qHufvU/SiTkzq1BCI2rAFXvNqNV57WFiQ/9nQUF5OP/ZSNQlSQuura",
     linkTitle: `${SITE.title} on QQ`,
-    icon: IconBrandX,
+    icon: IconBrandQq,
   },
   {
     name: "Bilibili",
     href: "https://space.bilibili.com/520945083",
     linkTitle: `${SITE.title} on Bilibili`,
-    icon: IconLinkedin,
+    icon: IconBrandBilibili,
   },
   {
     name: "Mail",
