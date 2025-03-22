@@ -28,3 +28,6 @@ package-lock.json
 # pagefind
 
 public/pagefind
+
+# obsdian
+.obsidian
