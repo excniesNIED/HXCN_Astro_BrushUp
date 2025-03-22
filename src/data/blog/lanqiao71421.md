@@ -34,11 +34,11 @@ description:
 ### 代码
 ```python
 def main():
-    s=input().split()
+    s=input().strip()
     parts=s.split('+')
     a=int(parts[0])
     b=int(parts[1])
     print(a+b)
-if __name__=="main":
+if __name__=="__main__":
     main()
 ```
