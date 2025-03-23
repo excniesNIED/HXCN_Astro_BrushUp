@@ -34,10 +34,9 @@ description: Saas71421. 简易计算器
 ### 代码
 ```python
 def main():
-    s=input().strip()
-    parts=s.split('+')
-    a=int(parts[0])
-    b=int(parts[1])
+    s=input().strip().split('+')
+    a=int(s[0])
+    b=int(s[1])
     print(a+b)
 if __name__=="__main__":
     main()
