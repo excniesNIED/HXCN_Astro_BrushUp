@@ -9,7 +9,7 @@ tags:
   - 蓝桥杯
   - 算法
   - python
-description:
+description: Saas44579. ASC
 ---
 **本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。**
 

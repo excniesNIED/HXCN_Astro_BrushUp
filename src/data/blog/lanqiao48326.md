@@ -9,7 +9,7 @@ tags:
   - 蓝桥杯
   - 算法
   - python
-description:
+description: Saas48326. 求余
 ---
 ### 问题描述
 
