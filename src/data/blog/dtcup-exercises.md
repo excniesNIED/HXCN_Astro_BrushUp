@@ -7,7 +7,7 @@ featured: false
 draft: false
 tags:
   - 大唐杯
-description: 近四年真题 (含答案), 是最重要的学习资料#
+description: 近四年真题 (含答案), 是最重要的学习资料
 ---
 
 ## 第八届
