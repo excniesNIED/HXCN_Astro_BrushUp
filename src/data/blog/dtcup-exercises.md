@@ -3,7 +3,7 @@ title: 大唐杯 DTCUP 真题集
 author: 才疏学浅的小熊
 pubDatetime: 2025-04-19T00:00:00Z
 slug: dtcup-exercises
-featured: true
+featured: false
 draft: false
 tags:
   - 大唐杯

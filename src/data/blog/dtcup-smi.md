@@ -3,7 +3,7 @@ title: 大唐杯 仿真
 author: 全民制作人
 pubDatetime: 2025-04-19T00:00:00Z
 slug: dtcup-smi
-featured: true
+featured: false
 draft: false
 tags:
   - 大唐杯
