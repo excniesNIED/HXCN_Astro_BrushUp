@@ -3,13 +3,12 @@ title: 大唐杯 仿真
 author: 全民制作人
 pubDatetime: 2025-04-19T00:00:00Z
 slug: dtcup-smi
-featured: false
+featured: true
 draft: false
 tags:
   - 大唐杯
 description: 大唐杯仿真讲解合集
 ---
-
 ## [充电时光](https://space.bilibili.com/366856793)
 
 【大唐杯仿真实验-工程实践】 https://www.bilibili.com/video/BV1EbdDYHEVs/
