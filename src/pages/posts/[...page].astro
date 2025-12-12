@@ -20,13 +20,9 @@ const { page } = Astro.props;
 
 <Layout title={`Posts | ${SITE.title}`}>
   <Header />
-  <Main pageTitle="文章" pageDesc="全部文章">
+  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
     <ul>
-      {
-        page.data.map(({ data, id }) => (
-          <Card href={`/posts/${id}`} frontmatter={data} />
-        ))
-      }
+      {page.data.map(data => <Card {...data} />)}
     </ul>
   </Main>
 
