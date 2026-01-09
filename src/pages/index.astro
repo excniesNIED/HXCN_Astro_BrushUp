@@ -27,10 +27,11 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         </h1>
         <a
           target="_blank"
-          href="/rss.xml"
+          href={new URL("rss.xml", Astro.site).href}
           class="inline-flex items-center gap-2 opacity-85 hover:text-accent hover:opacity-100"
           aria-label="RSS Feed"
           title="RSS Feed"
+          rel="noopener noreferrer"
         >
           <IconRss width={18} height={18} class="stroke-current stroke-2" />
           <span class="text-sm">RSS</span>
