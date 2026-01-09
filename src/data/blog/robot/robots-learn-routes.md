@@ -6,6 +6,9 @@ slug: 2025-robots-learn-routes
 featured: false
 draft: false
 tags:
+  - 机器人学
+  - ROS
+  - SLAM
 description: 机器人 学习路线 v2.0
 ---
 # 机器人学习路线 v2.0
