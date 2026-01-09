@@ -1,13 +1,13 @@
 ---
-title: 大唐杯 仿真
+title: 2025 大唐杯仿真视频讲解合集
 author: 全民制作人
 pubDatetime: 2025-04-19T00:00:00Z
-slug: dtcup-smi
+slug: 2025-dtcup-smi
 featured: true
 draft: false
 tags:
   - 大唐杯
-description: 大唐杯仿真讲解合集
+description: 2025 大唐杯仿真视频讲解合集
 ---
 ## [充电时光](https://space.bilibili.com/366856793)
 

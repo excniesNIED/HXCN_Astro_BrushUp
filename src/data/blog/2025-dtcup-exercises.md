@@ -1,13 +1,13 @@
 ---
-title: 大唐杯 DTCUP 真题集
+title: 2025 大唐杯 DTCUP 真题集
 author: 才疏学浅的小熊
 pubDatetime: 2025-04-19T00:00:00Z
-slug: dtcup-exercises
+slug: 2025-dtcup-exercises
 featured: true
 draft: false
 tags:
   - 大唐杯
-description: 近四年真题 (含答案), 是最重要的学习资料
+description: 2025年近四年真题 (含答案), 是最重要的学习资料
 ---
 ## 第八届
 
