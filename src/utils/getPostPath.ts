@@ -1,5 +1,7 @@
 import { BLOG_PATH } from "@/content.config";
 import { slugifyStr } from "./slugify";
+import { CATEGORY_MAP } from "@/config/categoryMap";
+import type { CategoryMapping } from "@/config/categoryMap";
 
 export type CategoryInfo = {
   slug: string;
@@ -14,6 +16,42 @@ const fallbackSlug = (input: string) => {
 
 const normalizeSegmentSlug = (segment: string) => {
   return slugifyStr(segment) || fallbackSlug(segment);
+};
+
+const normalizeCategoryPath = (input: string) => {
+  const trimmed = input.trim().replace(/^\/+|\/+$/g, "");
+  const first = trimmed.split("/").filter(Boolean)[0] ?? "";
+  return normalizeSegmentSlug(first);
+};
+
+const CATEGORY_MAP_BY_PATH: Map<string, CategoryMapping> = (() => {
+  const map = new Map<string, CategoryMapping>();
+  for (const mapping of Object.values(CATEGORY_MAP)) {
+    const normalized = mapping.path ? normalizeCategoryPath(mapping.path) : "";
+    if (!normalized) continue;
+    map.set(normalized, mapping);
+  }
+  return map;
+})();
+
+const getCategoryMapping = (dir: string) => {
+  const direct = CATEGORY_MAP[dir] ?? CATEGORY_MAP[normalizeSegmentSlug(dir)];
+  if (direct) return direct;
+
+  return CATEGORY_MAP_BY_PATH.get(normalizeSegmentSlug(dir));
+};
+
+const resolveCategoryFromDir = (
+  dir: string,
+  fallback: CategoryInfo
+): CategoryInfo => {
+  const entry = getCategoryMapping(dir);
+  const mappedSlug = entry?.path ? normalizeCategoryPath(entry.path) : "";
+
+  return {
+    slug: mappedSlug || normalizeSegmentSlug(dir) || fallback.slug,
+    name: entry?.name?.trim() || dir,
+  };
 };
 
 const getDirSegments = (filePath: string | undefined) => {
@@ -34,8 +72,7 @@ export const getCategoryFromFilePath = (
   const [firstDir] = getDirSegments(filePath);
   if (!firstDir) return fallback;
 
-  const slug = normalizeSegmentSlug(firstDir);
-  return { slug: slug || fallback.slug, name: firstDir };
+  return resolveCategoryFromDir(firstDir, fallback);
 };
 
 export const getPostRouteParams = (id: string, filePath: string | undefined) => {
@@ -43,10 +80,11 @@ export const getPostRouteParams = (id: string, filePath: string | undefined) => 
   const filenameSlug = blogId.length > 0 ? blogId.slice(-1)[0] : id;
 
   const dirSegments = getDirSegments(filePath);
-  const normalizedDirs = dirSegments.map(normalizeSegmentSlug).filter(Boolean);
+  const [firstDir, ...restDirs] = dirSegments;
+  const fallback: CategoryInfo = { slug: "others", name: "其他" };
+  const cata = firstDir ? resolveCategoryFromDir(firstDir, fallback).slug : "others";
 
-  const cata = normalizedDirs[0] ?? "others";
-  const rest = normalizedDirs.slice(1);
+  const rest = restDirs.map(normalizeSegmentSlug).filter(Boolean);
   const slug = [...rest, filenameSlug].join("/");
 
   return { cata, slug };
