@@ -8,4 +8,5 @@ export type CategoryMapping = {
 export const CATEGORY_MAP: Record<string, CategoryMapping> = {
   "蓝桥杯": { path: "lanqiao", name: "蓝桥杯" },
   "大唐杯": { path: "dtcup", name: "大唐杯" }, // 不写 name 就展示文件夹名
+  "示例": { path: "example", name: "示例" },
 };
