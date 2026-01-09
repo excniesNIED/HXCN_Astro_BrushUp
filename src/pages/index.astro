@@ -3,14 +3,12 @@ import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import Socials from "@/components/Socials.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import Card from "@/components/Card.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
-import { SOCIALS } from "@/constants";
 
 const posts = await getCollection("blog");
 
@@ -23,27 +21,41 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
     <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        萑澈的错题本
-      </h1>
-      <a
-        target="_blank"
-        href="/rss.xml"
-        class="inline-block"
-        aria-label="rss feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+        <h1 class="my-4 text-4xl font-bold sm:my-8 sm:text-5xl">
+          萑澈的错题本
+        </h1>
+        <a
+          target="_blank"
+          href="/rss.xml"
+          class="inline-flex items-center gap-2 opacity-85 hover:text-accent hover:opacity-100"
+          aria-label="RSS Feed"
+          title="RSS Feed"
+        >
+          <IconRss width={18} height={18} class="stroke-current stroke-2" />
+          <span class="text-sm">RSS</span>
+        </a>
+      </div>
 
-      <p>
-        欢迎来到「萑澈错题本」的奇妙世界——这里没有“一学就会”的魔法，但有“错了再战”的快乐秘籍！🎮 无论你是被算法题绕成毛线团的懵圈选手，被408四门课连环暴击的头秃预备役，还是和竞赛题相爱相杀的倔强肝帝，这里都能把你的错题变成升级打怪的专属装备库！错题本会自动给题目贴上“这题阴险”“知识点离家出走”等灵魂标签，附赠段子手写的解题脑洞和学霸的摸鱼小抄。每天解锁一道盲盒题（可能是送分天使也可能是脑细胞刺客），在“错题考古墙”围观自己三个月前的迷惑代码笑出鹅叫，还能去评论区捕捉和你一样边挠头边干饭的战友。悄悄说，连续打卡会触发“诶这题我居然会了”的隐藏成就哦～快来把翻车现场变成勋章墙，毕竟，笑着刷题的人运气总不会太差！🚀
+      <p class="max-w-prose leading-relaxed opacity-90">
+        把每一次“翻车”变成可复用的知识点：题意拆解、易错点回放、正确解法与小结模板。
+        这里的文章按分类沉淀，方便你在复盘时快速定位同类题目。
       </p>
+
+      <div class="mt-6 grid gap-3 sm:grid-cols-3">
+        <div class="rounded border border-border bg-muted/20 p-4">
+          <p class="font-semibold">按分类整理</p>
+          <p class="mt-1 text-sm opacity-80">竞赛 / 408 / 题库练习</p>
+        </div>
+        <div class="rounded border border-border bg-muted/20 p-4">
+          <p class="font-semibold">错因优先</p>
+          <p class="mt-1 text-sm opacity-80">把“为什么错”写清楚</p>
+        </div>
+        <div class="rounded border border-border bg-muted/20 p-4">
+          <p class="font-semibold">可复用模板</p>
+          <p class="mt-1 text-sm opacity-80">沉淀思路与代码片段</p>
+        </div>
+      </div>
     </section>
 
     {
