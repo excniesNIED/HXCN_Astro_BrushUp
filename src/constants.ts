@@ -34,7 +34,7 @@ export const SOCIALS: Social[] = [
   },
   {
     name: "Bilibili",
-    href: "https://space.bilibili.com/520945083",
+    href: "https://space.bilibili.com/3494377156511978",
     linkTitle: `${SITE.title} on Bilibili`,
     icon: IconBrandBilibili,
   },
