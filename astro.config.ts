@@ -16,7 +16,19 @@ export default defineConfig({
   site: SITE.website,
   integrations: [
     sitemap({
-      filter: page => SITE.showArchives || !page.endsWith("/archives"),
+      filter: page => {
+        if (!SITE.showArchives && page.endsWith("/archives")) return false;
+
+        // Keep the old `/posts` listing pages, but exclude legacy post detail pages
+        // since canonical URLs live under `/post/{cata}/{slug}`.
+        const normalized = page.endsWith("/") ? page.slice(0, -1) : page;
+
+        if (normalized === "/posts") return true;
+        if (/^\/posts\/\d+$/.test(normalized)) return true;
+        if (normalized.startsWith("/posts/")) return false;
+
+        return true;
+      },
     }),
   ],
   markdown: {

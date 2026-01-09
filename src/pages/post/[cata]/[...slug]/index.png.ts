@@ -1,7 +1,6 @@
 import type { APIRoute } from "astro";
 import { getCollection, type CollectionEntry } from "astro:content";
-import { getPath } from "@/utils/getPath";
-import { getPostPath } from "@/utils/getPostPath";
+import { getPostRouteParams } from "@/utils/getPostPath";
 import { generateOgImageForPost } from "@/utils/generateOgImages";
 import { SITE } from "@/config";
 
@@ -15,8 +14,8 @@ export async function getStaticPaths() {
   );
 
   return posts.map(post => ({
-    params: { slug: getPath(post.id, post.filePath, false).replace(/^\//, "") },
-    props: { redirectTo: `${getPostPath(post.id, post.filePath)}/index.png` },
+    params: getPostRouteParams(post.id, post.filePath),
+    props: post,
   }));
 }
 
@@ -28,16 +27,9 @@ export const GET: APIRoute = async ({ props }) => {
     });
   }
 
-  const redirectTo = (props as { redirectTo?: string } | undefined)?.redirectTo;
-  if (redirectTo) {
-    return new Response(null, {
-      status: 308,
-      headers: { Location: redirectTo },
-    });
-  }
-
   const buffer = await generateOgImageForPost(props as CollectionEntry<"blog">);
   return new Response(buffer as BodyInit, {
     headers: { "Content-Type": "image/png" },
   });
 };
+

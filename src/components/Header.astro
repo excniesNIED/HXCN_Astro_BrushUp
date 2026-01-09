@@ -18,6 +18,25 @@ const isActive = (path: string) => {
   const currentPathArray = currentPath.split("/").filter(p => p.trim());
   const pathArray = path.split("/").filter(p => p.trim());
 
+  // Special-case: post detail pages live under `/post/{cata}/{slug...}` but should
+  // highlight the "all posts" nav item instead of "categories".
+  if (pathArray[0] === "posts") {
+    return (
+      currentPath === path ||
+      currentPathArray[0] === "posts" ||
+      (currentPathArray[0] === "post" && currentPathArray.length >= 3)
+    );
+  }
+
+  // Categories should only be active on `/post` and `/post/{cata}` (list pages),
+  // not on post detail pages.
+  if (pathArray[0] === "post") {
+    return (
+      currentPath === path ||
+      (currentPathArray[0] === "post" && currentPathArray.length <= 2)
+    );
+  }
+
   return currentPath === path || currentPathArray[0] === pathArray[0];
 };
 ---
@@ -84,6 +103,11 @@ const isActive = (path: string) => {
         <li class="col-span-2">
           <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
             文章
+          </a>
+        </li>
+        <li class="col-span-2">
+          <a href="/post" class:list={{ "active-nav": isActive("/post") }}>
+            分类
           </a>
         </li>
         <li class="col-span-2">

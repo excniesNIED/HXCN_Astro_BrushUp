@@ -79,7 +79,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       )
     }
 
-    <div class="my-8 text-center">
+    <div class="my-8 flex flex-col justify-center gap-4 text-center sm:flex-row">
+      <LinkButton href="/post/">按分类浏览</LinkButton>
       <LinkButton href="/posts/">
         全部文章
         <IconArrowRight class="inline-block rtl:-rotate-180" />

@@ -1,27 +1,36 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import PostDetails from "@/layouts/PostDetails.astro";
-import getSortedPosts from "@/utils/getSortedPosts";
 import { getPath } from "@/utils/getPath";
-
-type Props = {
-  post: CollectionEntry<"blog">;
-};
+import { getPostPath } from "@/utils/getPostPath";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
-  const postResult = posts.map(post => ({
-    params: { slug: getPath(post.id, post.filePath, false) },
-    props: { post },
-  }));
+  const postResult = posts.map(post => {
+    const oldSlug = getPath(post.id, post.filePath, false).replace(/^\//, "");
+    return {
+      params: { slug: oldSlug },
+      props: { redirectTo: getPostPath(post.id, post.filePath) },
+    };
+  });
 
   return postResult;
 }
 
-const { post } = Astro.props;
-
-const posts = await getCollection("blog");
-const sortedPosts = getSortedPosts(posts);
+const { redirectTo } = Astro.props;
 ---
 
-<PostDetails post={post} posts={sortedPosts} />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0;url=${redirectTo}`} />
+    <link rel="canonical" href={redirectTo} />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <p>
+      Redirecting to <a href={redirectTo}>{redirectTo}</a>...
+    </p>
+  </body>
+</html>

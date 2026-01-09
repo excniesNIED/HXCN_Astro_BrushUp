@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import Main from "@/layouts/Main.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import getUniqueCategories from "@/utils/getUniqueCategories";
+import getPostsByCategory from "@/utils/getPostsByCategory";
+import getSortedPosts from "@/utils/getSortedPosts";
+import { SITE } from "@/config";
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("blog");
+  const categories = getUniqueCategories(posts);
+  return categories.map(({ cata, cataName }) => ({
+    params: { cata },
+    props: { cataName },
+  }));
+}) satisfies GetStaticPaths;
+
+const { cata } = Astro.params;
+const { cataName } = Astro.props;
+
+const posts = await getCollection("blog");
+const categoryPosts = getSortedPosts(getPostsByCategory(posts, cata));
+---
+
+<Layout title={`分类: ${cataName} | ${SITE.title}`}>
+  <Header />
+  <Main
+    pageTitle={["分类:", `${cataName}`]}
+    titleTransition={cata}
+    pageDesc={`这一类一共有 ${categoryPosts.length} 篇，慢慢挑~`}
+  >
+    <ul>
+      {categoryPosts.map(data => <Card {...data} />)}
+    </ul>
+  </Main>
+
+  <Footer />
+</Layout>
