@@ -7,9 +7,8 @@ featured: false
 draft: false
 tags:
   - 软件工程
-description: 软件工程导论期末复习
+description: 山东师范大学软件工程导论期末复习题
 ---
-
 ## 第1章 软件工程学概述
 
 ### 1.1 软件危机

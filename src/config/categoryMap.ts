@@ -10,4 +10,6 @@ export const CATEGORY_MAP: Record<string, CategoryMapping> = {
   "大唐杯": { path: "dtcup", name: "大唐杯" }, // 不写 name 就展示文件夹名
   "示例": { path: "example", name: "示例" },
   "Astro Paper": { path: "astro-paper", name: "AstroPaper" },
+  "软件工程": { path: "se", name: "软件工程" },
+  "机器人学": { path: "robot", name: "机器人学" },
 };
