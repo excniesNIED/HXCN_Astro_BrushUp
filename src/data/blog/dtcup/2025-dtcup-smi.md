@@ -7,7 +7,7 @@ featured: true
 draft: false
 tags:
   - 大唐杯
-description: 2025 大唐杯仿真视频讲解合集
+description: 2025 大唐杯仿真实验/工程实践视频讲解链接汇总（B站），按 UP 主分类，覆盖电信业务、移动性管理、物理层、5G 网络开通调测等模块。
 ---
 ## [充电时光](https://space.bilibili.com/366856793)
 
