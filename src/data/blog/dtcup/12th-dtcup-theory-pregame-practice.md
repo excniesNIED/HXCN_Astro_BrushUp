@@ -267,6 +267,9 @@ description: 第十二届“大唐杯”赛前练习-理论赛
 
 大唐5G网络版本默认的时钟源是GPS。（ ）
 
+- A. 正确
+- B. 错误
+
 <details>
 <summary>答案</summary>
 
@@ -277,6 +280,9 @@ description: 第十二届“大唐杯”赛前练习-理论赛
 ### 题目 2
 
 5G要求达到的峰值速率是10Gbps。（ ）
+
+- A. 正确
+- B. 错误
 
 <details>
 <summary>答案</summary>
@@ -289,6 +295,9 @@ description: 第十二届“大唐杯”赛前练习-理论赛
 
 5G NR系统中，UE在RRC IDLE态和RRC INACTIVE态的寻呼标识为P-RNTI。（ ）
 
+- A. 正确
+- B. 错误
+
 <details>
 <summary>答案</summary>
 
@@ -300,6 +309,9 @@ description: 第十二届“大唐杯”赛前练习-理论赛
 
 大唐5G产品EMB6116机框仅支持8/9/10槽位插装HBPOF单板。（ ）
 
+- A. 正确
+- B. 错误
+
 <details>
 <summary>答案</summary>
 
@@ -310,6 +322,9 @@ description: 第十二届“大唐杯”赛前练习-理论赛
 ### 题目 5
 
 5G NR系统中，UE可通过SIB3获取同频小区重选的相关消息。（ ）
+
+- A. 正确
+- B. 错误
 
 <details>
 <summary>答案</summary>
