@@ -13,4 +13,5 @@ export const CATEGORY_MAP: Record<string, CategoryMapping> = {
   "软件工程": { path: "se", name: "软件工程" },
   "机器人学": { path: "robot", name: "机器人学" },
   "中学信息技术教学论": { path: "it-teaching-theory", name: "中学信息技术教学论" },
+  "睿抗CAIP大数据应用开发赛项": { path: "ra-caip-data", name: "睿抗CAIP大数据应用开发赛项" },
 };
