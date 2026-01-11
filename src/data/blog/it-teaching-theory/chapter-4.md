@@ -1,7 +1,7 @@
 ---
 title: 【中学信息技术教学论】第4章 PPT（我国信息技术课程建设现状）题目及答案
 author: 萑澈
-pubDatetime: 2026-01-11T10:00:00Z
+pubDatetime: 2026-01-11T00:00:00Z
 slug: chapter-4
 featured: false
 draft: false

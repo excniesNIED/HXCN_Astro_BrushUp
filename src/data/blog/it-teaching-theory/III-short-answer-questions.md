@@ -1,7 +1,7 @@
 ---
 title: 【中学信息技术教学论】简答题整合（1-9章）
 author: 萫澈
-pubDatetime: 2026-01-11T10:00:00Z
+pubDatetime: 2026-01-11T00:00:00Z
 slug: III-short-answer-questions
 featured: false
 draft: false
