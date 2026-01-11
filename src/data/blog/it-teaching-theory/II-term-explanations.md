@@ -1,5 +1,5 @@
 ---
-title: 【中学信息技术教学论】名词解释整合（1-9章）
+title: 【中学信息技术教学论】名词解释整合
 author: 萑澈
 pubDatetime: 2026-01-11T00:00:00Z
 slug: II-term-explanations
@@ -8,10 +8,8 @@ draft: false
 tags:
   - 中学信息技术教学论
   - 名词解释
-description: 【中学信息技术教学论】第1-9章名词解释整合
+description: 【中学信息技术教学论】名词解释整合
 ---
-
-# 名词解释整合（第1-9章）
 
 ## 第1章 信息技术教学论概述
 

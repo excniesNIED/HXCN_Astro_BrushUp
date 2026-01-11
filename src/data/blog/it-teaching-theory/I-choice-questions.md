@@ -1,5 +1,5 @@
 ---
-title: 【中学信息技术教学论】选择题整合（1-9章）
+title: 【中学信息技术教学论】选择题整合
 author: 萑澈
 pubDatetime: 2026-01-11T00:00:00Z
 slug: I-choice-questions
@@ -8,10 +8,8 @@ draft: false
 tags:
   - 中学信息技术教学论
   - 选择题
-description: 【中学信息技术教学论】第1-9章选择题整合
+description: 【中学信息技术教学论】选择题整合
 ---
-
-# 选择题整合（第1-9章）
 
 ## 第1章 信息技术教学论概述
 
