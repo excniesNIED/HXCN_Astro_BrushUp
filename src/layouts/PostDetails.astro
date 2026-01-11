@@ -300,17 +300,48 @@ const nextPost =
         });
 
       const stateEl = control.querySelector("[data-collapse-state]");
+      const expandBtn = control.querySelector('[data-action="expand"]');
+      const collapseBtn = control.querySelector('[data-action="collapse"]');
+      const toggleBtn = control.querySelector('[data-action="toggle"]');
 
       function updateState() {
         if (!stateEl) return;
         const details = getDetails();
         const openCount = details.filter(d => d.open).length;
-        stateEl.textContent = `${openCount}/${details.length}`;
+        stateEl.textContent = details.length ? `${openCount}/${details.length}` : "";
+      }
+
+      function getToggleLabels() {
+        const expandLabel =
+          (toggleBtn instanceof HTMLElement &&
+            toggleBtn.getAttribute("data-label-expand")) ||
+          "展开全部答案";
+        const collapseLabel =
+          (toggleBtn instanceof HTMLElement &&
+            toggleBtn.getAttribute("data-label-collapse")) ||
+          "收起全部答案";
+        return { expandLabel, collapseLabel };
+      }
+
+      function updateControls() {
+        const details = getDetails();
+        const openCount = details.filter(d => d.open).length;
+        const allOpen = details.length > 0 && openCount === details.length;
+
+        if (expandBtn instanceof HTMLElement) expandBtn.hidden = allOpen;
+        if (collapseBtn instanceof HTMLElement) collapseBtn.hidden = !allOpen;
+
+        if (toggleBtn instanceof HTMLElement) {
+          const { expandLabel, collapseLabel } = getToggleLabels();
+          toggleBtn.textContent = allOpen ? collapseLabel : expandLabel;
+          toggleBtn.setAttribute("aria-pressed", allOpen ? "true" : "false");
+        }
       }
 
       function setAll(open) {
         for (const d of getDetails()) d.open = open;
         updateState();
+        updateControls();
       }
 
       control.addEventListener("click", e => {
@@ -319,14 +350,22 @@ const nextPost =
         const action = btn.getAttribute("data-action");
         if (action === "expand") setAll(true);
         if (action === "collapse") setAll(false);
+        if (action === "toggle") {
+          const details = getDetails();
+          const openCount = details.filter(d => d.open).length;
+          const allOpen = details.length > 0 && openCount === details.length;
+          setAll(!allOpen);
+        }
       });
 
       target.addEventListener("toggle", e => {
         if (!(e.target instanceof HTMLDetailsElement)) return;
         updateState();
+        updateControls();
       });
 
       updateState();
+      updateControls();
     }
   }
   initCollapseControls();

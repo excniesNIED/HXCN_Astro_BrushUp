@@ -18,16 +18,11 @@ description: 近四年大唐杯理论真题汇总（按届/组整理，含单选
   <button
     type="button"
     class="rounded bg-muted border border-muted px-3 py-1 text-sm font-medium text-foreground hover:opacity-80"
-    data-action="expand"
+    data-action="toggle"
+    data-label-expand="展开全部答案"
+    data-label-collapse="收起全部答案"
   >
     展开全部答案
-  </button>
-  <button
-    type="button"
-    class="rounded bg-muted border border-muted px-3 py-1 text-sm font-medium text-foreground hover:opacity-80"
-    data-action="collapse"
-  >
-    收起全部答案
   </button>
   <span class="text-sm opacity-70" data-collapse-state></span>
 </div>
