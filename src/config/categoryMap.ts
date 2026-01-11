@@ -12,4 +12,5 @@ export const CATEGORY_MAP: Record<string, CategoryMapping> = {
   "Astro Paper": { path: "astro-paper", name: "AstroPaper" },
   "软件工程": { path: "se", name: "软件工程" },
   "机器人学": { path: "robot", name: "机器人学" },
+  "中学信息技术教学论": { path: "it-teaching-theory", name: "中学信息技术教学论" },
 };
