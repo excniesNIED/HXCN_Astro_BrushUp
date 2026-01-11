@@ -1,5 +1,5 @@
 ---
-title: 【中学信息技术教学论】第7章 PPT（基于方法的教学设计概述）题目及答案
+title: 【中学信息技术教学论】第7章 基于方法的教学设计概述 题目及答案
 author: 萑澈
 pubDatetime: 2026-01-11T00:00:00Z
 slug: chapter-7
@@ -7,7 +7,7 @@ featured: false
 draft: false
 tags:
   - 中学信息技术教学论
-description: 【中学信息技术教学论】第7章 PPT（基于方法的教学设计概述）题目及答案
+description: 【中学信息技术教学论】第7章 基于方法的教学设计概述 题目及答案
 ---
 #### 一、选择题（22题）
 
