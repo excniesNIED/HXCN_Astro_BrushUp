@@ -2,7 +2,7 @@
 title: 【中学信息技术教学论】第2章 PPT（义务教育信息科技课程建设）题目及答案
 author: 萑澈
 pubDatetime: 2026-01-11T10:00:00Z
-slug:
+slug: chapter-2
 featured: false
 draft: false
 tags:

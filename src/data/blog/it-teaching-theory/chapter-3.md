@@ -2,7 +2,7 @@
 title: 【中学信息技术教学论】第3章 PPT（信息技术课程发展）题目及答案
 author: 萑澈
 pubDatetime: 2026-01-11T10:00:00Z
-slug:
+slug: chapter-3
 featured: false
 draft: false
 tags:

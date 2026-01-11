@@ -2,7 +2,7 @@
 title: 【中学信息技术教学论】第1章 PPT（信息技术教学论概述）题目及答案
 author: 萑澈
 pubDatetime: 2026-01-11T10:00:00Z
-slug:
+slug: chapter-1
 featured: false
 draft: false
 tags:

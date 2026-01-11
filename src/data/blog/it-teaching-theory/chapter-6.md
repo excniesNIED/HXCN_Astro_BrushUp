@@ -2,7 +2,7 @@
 title: 【中学信息技术教学论】第6章 PPT（教学设计基本过程）题目及答案
 author: 萑澈
 pubDatetime: 2026-01-11T10:00:00Z
-slug:
+slug: chapter-6
 featured: false
 draft: false
 tags:

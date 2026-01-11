@@ -2,7 +2,7 @@
 title: 【中学信息技术教学论】选择题整合（1-9章）
 author: 萑澈
 pubDatetime: 2026-01-11T10:00:00Z
-slug:
+slug: I-choice-questions
 featured: false
 draft: false
 tags:
