@@ -1,10 +1,10 @@
 ---
 title: 2025 睿抗CAIP大数据应用开发赛项真题
 author: 睿抗
-pubDatetime: 2025-06-15T00:00:00Z
+pubDatetime: 2025-06-15T12:00:00Z
 slug: 2025-raicom-caip-data-provincial
 featured: false
-draft: false
+draft: true
 tags:
   - 睿抗
   - HDFS
@@ -16,13 +16,8 @@ tags:
   - 大数据
 description: 2025 睿抗机器人开发者大赛-CAIP 信息技术创新赛道-大数据应用开发赛项（本科组）
 ---
-
-<div class="not-prose my-4 flex flex-wrap items-center gap-2" data-collapse-controls data-target="#article" data-details-selector="details">
-  <button type="button" class="rounded bg-muted border border-muted px-3 py-1 text-sm font-medium text-foreground hover:opacity-80" data-action="toggle" data-label-expand="展开全部答案" data-label-collapse="收起全部答案">展开全部答案</button>
-  <span class="text-sm opacity-70" data-collapse-state></span>
-</div>
-
-共提取 91 题。
+- 满分： 210
+- 及格分： 126
 
 ## 单选题
 
