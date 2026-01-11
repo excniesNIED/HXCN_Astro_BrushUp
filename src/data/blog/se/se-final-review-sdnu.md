@@ -3,7 +3,7 @@ title: 软件工程导论期末复习
 author: Design
 pubDatetime: 2025-06-24T00:00:00Z
 slug: se-final-review-sdnu
-featured: false
+featured: true
 draft: false
 tags:
   - 软件工程
