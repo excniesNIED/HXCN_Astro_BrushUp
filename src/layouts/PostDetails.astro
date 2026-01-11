@@ -278,6 +278,59 @@ const nextPost =
   }
   attachCopyButtons();
 
+  /** Expand/collapse all <details> blocks inside an article */
+  function initCollapseControls() {
+    const controls = Array.from(
+      document.querySelectorAll("[data-collapse-controls]")
+    );
+
+    for (const control of controls) {
+      const targetSelector = control.getAttribute("data-target") || "#article";
+      const detailsSelector =
+        control.getAttribute("data-details-selector") || "details";
+
+      const target = document.querySelector(targetSelector);
+      if (!target) continue;
+
+      const getDetails = () =>
+        Array.from(target.querySelectorAll(detailsSelector)).filter(d => {
+          if (!(d instanceof HTMLDetailsElement)) return false;
+          if (d.hasAttribute("data-no-toggle")) return false;
+          return true;
+        });
+
+      const stateEl = control.querySelector("[data-collapse-state]");
+
+      function updateState() {
+        if (!stateEl) return;
+        const details = getDetails();
+        const openCount = details.filter(d => d.open).length;
+        stateEl.textContent = `${openCount}/${details.length}`;
+      }
+
+      function setAll(open) {
+        for (const d of getDetails()) d.open = open;
+        updateState();
+      }
+
+      control.addEventListener("click", e => {
+        const btn = e.target instanceof Element ? e.target.closest("button") : null;
+        if (!btn) return;
+        const action = btn.getAttribute("data-action");
+        if (action === "expand") setAll(true);
+        if (action === "collapse") setAll(false);
+      });
+
+      target.addEventListener("toggle", e => {
+        if (!(e.target instanceof HTMLDetailsElement)) return;
+        updateState();
+      });
+
+      updateState();
+    }
+  }
+  initCollapseControls();
+
   /* Go to page start after page swap */
   document.addEventListener("astro:after-swap", () =>
     window.scrollTo({ left: 0, top: 0, behavior: "instant" })

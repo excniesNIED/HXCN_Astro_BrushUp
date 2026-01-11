@@ -9,6 +9,29 @@ tags:
   - 大唐杯
 description: 近四年大唐杯理论真题汇总（按届/组整理，含单选/多选/判断）；每题附折叠答案，文末提供全量参考答案速查。
 ---
+<div
+  class="not-prose my-4 flex flex-wrap items-center gap-2"
+  data-collapse-controls
+  data-target="#article"
+  data-details-selector="details"
+>
+  <button
+    type="button"
+    class="rounded bg-muted border border-muted px-3 py-1 text-sm font-medium text-foreground hover:opacity-80"
+    data-action="expand"
+  >
+    展开全部答案
+  </button>
+  <button
+    type="button"
+    class="rounded bg-muted border border-muted px-3 py-1 text-sm font-medium text-foreground hover:opacity-80"
+    data-action="collapse"
+  >
+    收起全部答案
+  </button>
+  <span class="text-sm opacity-70" data-collapse-state></span>
+</div>
+
 ## 第八届
 
 ### 单选题（共 69 小题）
