@@ -1,8 +1,8 @@
 ---
-title: Saas
+title: 操作系统基础知识总结
 author: 萑澈
-pubDatetime: 2026-01-14T00:00:00Z
-slug: 2025-os-basics-summary
+pubDatetime: 2026-01-13T00:00:00Z
+slug: 2025-os-basics-summary-final
 featured: false
 draft: false
 tags:
