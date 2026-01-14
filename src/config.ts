@@ -5,7 +5,7 @@ export const SITE = {
   profile: "https://hxcn.cnies.org/",
   desc: "萑澈的错题本",
   title: "BrushUP",
-  ogImage: "https://gastigado.cnies.org/d/elements/hxcn_transparent_240.png",
+  ogImage: "https://gastigado.cnies.org/d/elements/bu_transparent_240.png",
   lightAndDarkMode: true,
   postPerIndex: 10,
   postPerPage: 10,
